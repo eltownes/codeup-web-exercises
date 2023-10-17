@@ -169,7 +169,8 @@ const enterNumberOkCancel= confirm("Would you like to enter a number?");
 if (enterNumberOkCancel) {
     // ask user for input - then test for number
     let userInput = parseFloat(prompt("Enter a number"));
-    let userInputNumberTF = !isNaN(userInput) ? true : false;
+    // let userInputNumberTF = !isNaN(userInput) ? true : false;
+    let userInputNumberTF = Number.isFinite(userInput) ? true : false;
 
     let msg;
     if (userInputNumberTF) {
