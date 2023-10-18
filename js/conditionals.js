@@ -165,29 +165,19 @@ Your price after the discount is $${discountedPrice}; a ${discountPercent}% disc
  * HINT: The way we prompt for a value could be improved
  */
 
-const enterNumberOkCancel= confirm("Would you like to enter a number?");
-if (enterNumberOkCancel) {
-    // ask user for input - then test for number
+if ( confirm("Would you like to enter a number?") ) {
     let userInput = parseFloat(prompt("Enter a number"));
-    // let userInputNumberTF = !isNaN(userInput) ? true : false;
     let userInputNumberTF = Number.isFinite(userInput) ? true : false;
 
     let msg;
     if (userInputNumberTF) {
-        // whether the number is even or odd
         msg = userInput % 2 === 0 ? "That number is even" : "That number is odd";
-        alert(msg);
-
-        // what the number plus 100 is
-        alert(`The number plus 100 is ${userInput + 100}`);
-
-        //  if the number is negative or positive
+        msg = `The number plus 100 is ${userInput + 100}`;
         msg = userInput < 0 ? "That number is negative" : "That number is positive";
-        alert(msg);
-
     } else {
-        alert("You did not enter a data type of 'number'.");
+        msg = "You did not enter a data type of 'number'.";
     }
+    alert(msg);
 }
 
 
