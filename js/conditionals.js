@@ -52,7 +52,7 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
- console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 
 
 /**
@@ -111,19 +111,32 @@ alert(analyzeColor(userColor.toLowerCase()));
 function calculateTotal(luckyNumber, totalAmount) {
     let discountPercent;
     switch (luckyNumber) {
-        case 0: discountPercent = 0; break;
-        case 1: discountPercent = .1; break;
-        case 2: discountPercent = .25; break;
-        case 3: discountPercent = .35; break;
-        case 4: discountPercent = .5; break;
-        case 5: discountPercent = 1; break;
+        case 0:
+            discountPercent = 0;
+            break;
+        case 1:
+            discountPercent = .1;
+            break;
+        case 2:
+            discountPercent = .25;
+            break;
+        case 3:
+            discountPercent = .35;
+            break;
+        case 4:
+            discountPercent = .5;
+            break;
+        case 5:
+            discountPercent = 1;
+            break;
     }
     // return discounted price
     return totalAmount * (1 - discountPercent);
 }
-console.log( calculateTotal(0, 100) ); // returns 100
-console.log( calculateTotal(4, 100) ); // returns 100
-console.log( calculateTotal(5, 100) ); // returns 100
+
+console.log(calculateTotal(0, 100)); // returns 100
+console.log(calculateTotal(4, 100)); // returns 100
+console.log(calculateTotal(5, 100)); // returns 100
 
 
 /**
@@ -136,7 +149,7 @@ console.log( calculateTotal(5, 100) ); // returns 100
  */
 // Generate a random number between 0 and 6
 const luckyNumber = Math.floor(Math.random() * 6);
-const amountDue = parseFloat( prompt("Enter the bill due") );
+const amountDue = parseFloat(prompt("Enter the bill due"));
 const discountedPrice = calculateTotal(luckyNumber, amountDue).toFixed(2);
 const discountPercent = ((amountDue - discountedPrice) / amountDue) * 100;
 alert(`
@@ -165,7 +178,7 @@ Your price after the discount is $${discountedPrice}; a ${discountPercent}% disc
  * HINT: The way we prompt for a value could be improved
  */
 
-if ( confirm("Would you like to enter a number?") ) {
+if (confirm("Would you like to enter a number?")) {
     let userInput = parseFloat(prompt("Enter a number"));
     let userInputNumberTF = Number.isFinite(userInput) ? true : false;
 
@@ -179,5 +192,3 @@ if ( confirm("Would you like to enter a number?") ) {
     }
     alert(msg);
 }
-
-
