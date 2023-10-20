@@ -7,7 +7,8 @@ for (let i = 0, j = 0; i <= 50; i++) {
     // run this loop just once
     for (let j = 0; i === 0; j++) {
         oddNumber = parseInt(prompt("Enter an odd number between 1 and 50:"));
-        if ((oddNumber < 1 || oddNumber > 50) || oddNumber % 2 === 1) {
+        if((oddNumber >=1 && oddNumber <= 50) && oddNumber % 2 === 1){
+        // if ((oddNumber < 1 || oddNumber > 50) || oddNumber % 2 === 1) {
             break; // got an odd number
         }
     }
