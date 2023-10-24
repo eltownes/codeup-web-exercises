@@ -83,14 +83,14 @@
         {
             title: "To Kill a Mockingbird",
             author: {
-                firstName: "Harper",
-                lastName: "Lee"
+                firstName: "Phil",
+                lastName: "Klay"
             }
         },
         {
-            title: "The Catcher in the Rye",
+            title: "Redeployment",
             author: {
-                firstName: "J.D.",
+                firstName: "JD",
                 lastName: "Salinger"
             }
         },
@@ -140,7 +140,7 @@
      */
 
     books.forEach((book, index) => {
-        console.log("Book # " + index + "\n" +
+        console.log("Book # " + (index + 1) + "\n" +
                     "Title: " + book.title + "\n" +
                     "Author: " + book.author.firstName + " " + book.author.lastName);
     });
@@ -155,6 +155,39 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, author) {
+        const firstName = author.split(" ")[0];
+        const lastName = author.split(" ")[1];
+        return {
+            title: title,
+            author: {
+                firstName, lastName
+            }
+        }
+    }
+    console.log(createBook("The Yellow Birds", "Kevin Powers"));
+
+    const books2 = [];
+    books2.push(createBook("The Yellow Birds", "Kevin Powers"));
+    books2.push(createBook("Atomic Habits", "James Clear"));
+    books2.push(createBook("The Power of Habit", "Charles Duhigg"));
+    console.log(books2);
+
+    console.log("-----showBookInfo-----");
+    function showBookInfo(book){
+        console.log(
+            "Title: " + book.title + "\n" +
+            "Author: " + book.author.firstName + " " + book.author.lastName);
+        return 0;
+    }
+    console.log(showBookInfo(books2[0]));
+
+    console.log("-----showBookInfo 2-----");
+    books2.forEach((book, index) => {
+        console.log("Book # " + (index+1) + "\n");
+        showBookInfo(book);
+    });
 
 
 
