@@ -27,8 +27,8 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    person.sayHello = () => {
-        return `G'Day, ${person.firstName} ${person.lastName}!`;
+    person.sayHello = function () {
+        return `G'Day, ${this.firstName} ${this.lastName}!`;
     }
     console.log(person);
     console.log(person.sayHello());
