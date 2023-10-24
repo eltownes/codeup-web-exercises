@@ -176,19 +176,16 @@
 
     console.log("-----showBookInfo-----");
     function showBookInfo(book){
-        console.log(
+        return(
             "Title: " + book.title + "\n" +
             "Author: " + book.author.firstName + " " + book.author.lastName);
-        return 0;
     }
     console.log(showBookInfo(books2[0]));
 
     console.log("-----showBookInfo 2-----");
     books2.forEach((book, index) => {
-        console.log("Book # " + (index+1) + "\n");
+        console.log("Book # " + (index+1) + "\n" + showBookInfo(book));
         showBookInfo(book);
     });
-
-
 
 })();
