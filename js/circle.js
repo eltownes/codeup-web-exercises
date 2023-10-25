@@ -31,4 +31,11 @@
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
 
+    console.log("=======================================================");
+    // copy circle into circle2 object and set that to 7
+    const circle2 = Object.assign({}, circle);
+    circle2.radius = 7;
+    circle2.logInfo(false);
+    circle2.logInfo(true);
+
 })();
