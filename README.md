@@ -1,6 +1,5 @@
-
 <h1 style="text-align: center">
- All of my projects and assignments from Codeup's Web Development Bootcamp.
+All of my projects and assignments from Codeup's Web Development Bootcamp.
 </h1>
 
 <div style="text-align: center;">
