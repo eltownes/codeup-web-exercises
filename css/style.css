@@ -51,4 +51,5 @@ th {
 td {
     border: 1px solid black;
     text-align: left;
+    padding: 5px 10px 5px 10px;
 }
