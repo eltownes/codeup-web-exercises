@@ -4,7 +4,14 @@
 }
 
 html {
-    background-color: lightgray;
+    background-color: yellow;
+    /*background-image: url("../media/wall-texture.jpg");*/
+}
+
+body {
+    background-image: url("../media/wall-texture.jpg");
+    /*background-position: left;*/
+    background-size: 5% 25%;
 }
 
 h1 {
