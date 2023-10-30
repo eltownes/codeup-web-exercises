@@ -3,6 +3,11 @@
     text-decoration: underline;
 }
 
+@font-face {
+    font-family: "customFont1";
+    src: url("../font/Agbalumo/Agbalumo-Regular.ttf");
+}
+
 html {
     background-color: yellow;
     /*background-image: url("../media/wall-texture.jpg");*/
@@ -12,6 +17,7 @@ body {
     background-image: url("../media/wall-texture.jpg");
     /*background-position: left;*/
     background-size: 5% 25%;
+    font-family: "customFont1", sans-serif;
 }
 
 h1 {
