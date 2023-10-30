@@ -1,5 +1,5 @@
 .fancy-header {
-    color: purple;
+    color: #446df6;
     text-decoration: underline;
 }
 
@@ -9,23 +9,37 @@
 }
 
 html {
-    background-color: yellow;
-    /*background-image: url("../media/wall-texture.jpg");*/
+    /*background-color: yellow;*/
+    background-image: url("../media/wall-texture.jpg");
+    /*opacity: 0.5;*/
+    /*background-size: cover;*/
 }
 
 body {
-    background-image: url("../media/wall-texture.jpg");
+    /*background-image: url("../media/wall-texture.jpg");*/
     /*background-position: left;*/
-    background-size: 5% 25%;
+    /*background-size: 5% 25%;*/
+    /*background-size: cover;*/
+    /*background-color: rgba(255, 255, 255, 0.5);*/
     font-family: "customFont1", sans-serif;
+    margin-left: 2%;
 }
 
 h1 {
     text-align: center;
 }
 
+p {
+    text-align: center;
+}
+
+img {
+    display: inline-table;
+    /*width: 10%;*/
+}
+
 h2 {
-    color: magenta;
+    color: #08a4bd;
     text-decoration: underline;
 }
 
@@ -38,11 +52,12 @@ ol {
 }
 
 table {
-    border: 2px solid black;
+    border: 3px solid black;
     border-collapse: collapse;
 }
 
 th {
+    color: #00635d;
     border: 2px solid black;
     font-size: 1.5em;
     padding: 10px;
@@ -52,4 +67,10 @@ td {
     border: 1px solid black;
     text-align: left;
     padding: 5px 10px 5px 10px;
+}
+
+a:hover {
+    font-size: 1.5em;
+    color: blue;
+    text-decoration: none;
 }
