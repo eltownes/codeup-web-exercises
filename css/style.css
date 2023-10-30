@@ -36,3 +36,19 @@ ul {
 ol {
     list-style-type: upper-roman;
 }
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    border: 2px solid black;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid black;
+    text-align: left;
+}
