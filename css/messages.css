@@ -5,3 +5,36 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
+:root {
+    --bg-info: #CEDEFF; --text-info: #2A1E89;
+    --bg-success: #D0F3DA; --text-success: #547E5B;
+    --bg-warning: #FCFBC9; --text-warning: #82783A;
+    --bg-danger: #FAD3D8; --text-danger: #89213B;
+}
+
+.message {
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+.message-info {
+    background-color: var(--bg-info);
+    color: var(--text-info);
+}
+
+.message-success {
+    background-color: var(--bg-success);
+    color: var(--text-success);
+}
+
+.message-warning {
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
+}
+
+.message-error {
+    background-color: var(--bg-danger);
+    color: var(--text-danger);
+}
