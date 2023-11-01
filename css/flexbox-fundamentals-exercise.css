@@ -34,19 +34,25 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     /* enter needed declarations here */
+    display: flex;
 }
 
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
+    justify-content: space-between;
+    align-items: center;
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    align-self: flex-start;
 }
 
 .purple-box {
@@ -57,10 +63,12 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    flex-grow: 1;
 }
 
 .blue-box {
