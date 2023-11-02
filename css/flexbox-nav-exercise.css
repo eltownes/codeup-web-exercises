@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/******** VARS ********/
+:root {
+    --nav-aside-font-type: Consolas, monaco, monospace;
+    --nav-aside-font-size: 1.1em;
+    --blue: #003366;
+    --green: #4CAF50;
+    --offWhite: #FAF8F0;
+}
+
+body {
+    background-color: var(--blue);
+    color: var(--offWhite);
+    margin: 1em;
+}
+
+/******** NAV ********/
+nav {
+    margin-bottom: 30px;
+    padding: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: var(--nav-aside-font-size);
+    font-family: var(--nav-aside-font-type);
+    padding-right: 3em;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--offWhite);
+    display: inline-block;
+    padding: 1em;
+}
+
+nav ul li:nth-child(2) {
+    margin-left: auto;
+}
+
+a:hover {
+    background-color: var(--offWhite);
+    color: var(--blue);
+    border-radius: 10px;
+}
+
+.circle {
+    display: flex;
+    color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 1em;
+    height: 3em;
+    width: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.init {
+    color: var(--green);
+}
+
+.nav-code {
+    color: var(--green);
+    font-size: 0.80em;
+}
+
+/******** HERO ********/
+.container-hero {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/******** ASIDE ********/
+aside {
+    display: flex;
+    flex-direction: column;
+    /*width: 15em;*/
+    min-width: 9em;
+    padding-left: 1em;
+    font-size: var(--nav-aside-font-size);
+    font-family: var(--nav-aside-font-type);
+    flex-wrap: nowrap;
+}
+
+aside>p {
+    margin-bottom: 1em;
+}
+
+/******** MAIN ********/
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.intro-2 .intro-3 .intro-4 .intro-5 {
+    color: var(--offWhite);
+}
+
+.intro-1 {
+    font-size: 1em;
+    color: var(--green);
+    margin-bottom: 1em;
+}
+
+.intro-2 {
+    font-size: 3.5em;
+    margin-bottom: 0;
+}
+
+.intro-3 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.intro-4 {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.intro-5 {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.intro-6 {
+    font-size: 1.5em;
+    color: var(--offWhite);
+    display: inline-block;
+    border: 2px solid var(--green);
+    padding: 4px 8px;
+    align-self: flex-start;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.intro-6:hover {
+    font-size: 2em;
+}
