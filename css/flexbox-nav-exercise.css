@@ -5,25 +5,50 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../font/Roboto_Mono/RobotoMono-VariableFont_wght.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat/Montserrat-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../font/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /******** VARS ********/
 :root {
-    --nav-aside-font-type: Consolas, monaco, monospace;
-    --nav-aside-font-size: 1.1em;
-    --blue: #003366;
-    --green: #4CAF50;
-    --offWhite: #FAF8F0;
+    --nav-aside-font-type: Montserrat, monospace;
+    --nav-aside-font-size: 1em;
+    --hero-font-type: RobotoMono, monospace;
+    --regular-font-type: OpenSans, monospace;
+    --blue: #1D2951; /* space blue */
+    --green: #5EAC24;
+    --white: #FFFFFF;
 }
 
 body {
     background-color: var(--blue);
-    color: var(--offWhite);
-    margin: 1em;
+    color: var(--white);
+    margin: 2em 3em 1em 2em;
 }
 
 /******** NAV ********/
 nav {
-    margin-bottom: 30px;
-    padding: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+    font-family: var(--nav-aside-font-type);
+    font-size: var(--nav-aside-font-size);
 }
 
 ul {
@@ -32,60 +57,101 @@ ul {
     margin: 0;
     display: flex;
     flex-direction: row;
-    font-size: var(--nav-aside-font-size);
-    font-family: var(--nav-aside-font-type);
-    padding-right: 3em;
+    align-items: center;
 }
 
-nav a {
+.nav-text {
     text-decoration: none;
-    color: var(--offWhite);
+    color: var(--white);
     display: inline-block;
     padding: 1em;
+}
+
+.nav-text:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
 }
 
 nav ul li:nth-child(2) {
     margin-left: auto;
 }
 
-a:hover {
-    background-color: var(--offWhite);
-    color: var(--blue);
-    border-radius: 10px;
+nav ul li:nth-child(3) {
+    margin-left: auto;
 }
 
-.circle {
+.init-border {
     display: flex;
     color: var(--green);
-    border: 2px solid var(--green);
-    border-radius: 1em;
-    height: 3em;
-    width: 3em;
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    height: 3.5em;
+    width: 3.5em;
     justify-content: center;
     align-items: center;
 }
 
-.init {
-    color: var(--green);
+.coding-logo {
+    height: 3em;
+    width: 3em;
 }
 
 .nav-code {
     color: var(--green);
-    font-size: 0.80em;
+}
+
+.nav-code {
+    margin-right: 0.5em; /* space between 00. and About */
+}
+
+.icons{
+    background-color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    margin-left: .5em;
+    margin-right: 1em;
+    height: 1.5em;
+    width: 1.5em;
+    transition: all 0.5s ease-in-out;
+}
+
+.icons:hover {
+    transform: scale(1.5);
+}
+
+#tip-github{
+    visibility: hidden;
+    display: none;
+    transition: visibility 0.1s, opacity 0.1s ease-in-out;
+}
+#tip-linkedin{
+    visibility: hidden;
+    display: none;
+    transition: visibility 0.1s, opacity 0.1s ease-in-out;
+}
+#tip-gmail{
+    visibility: hidden;
+    display: none;
+    transition: visibility 0.1s, opacity 0.1s ease-in-out;
+}
+
+.icons:hover #tip-github {
+    visibility: visible;
 }
 
 /******** HERO ********/
 .container-hero {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 /******** ASIDE ********/
 aside {
     display: flex;
     flex-direction: column;
-    /*width: 15em;*/
     min-width: 9em;
     padding-left: 1em;
     font-size: var(--nav-aside-font-size);
@@ -105,46 +171,45 @@ main {
 }
 
 .intro-2 .intro-3 .intro-4 .intro-5 {
-    color: var(--offWhite);
+    color: var(--white);
 }
 
 .intro-1 {
-    font-size: 1.1em;
+    font-family: var(--hero-font-type);
+    font-size: 1.25em;
     color: var(--green);
     margin-bottom: 1em;
 }
 
 .intro-2 {
+    font-family: var(--hero-font-type);
     font-size: 3.5em;
     margin-bottom: 0;
 }
 
 .intro-3 {
-    font-size: 2.5em;
-    margin-bottom: 1em;
+    font-family: var(--hero-font-type);
+    font-size: 2.0em;
+    margin-bottom: 1.5em;
 }
 
 .intro-4 {
-    font-size: 1.5em;
-    margin-bottom: 1.5em;
+    font-family: var(--regular-font-type);
+    font-size: 1.25em;
+    margin-bottom: 1.25em;
 }
 
 .intro-5 {
-    font-size: 1.5em;
-    margin-bottom: 1.5em;
+    font-family: var(--regular-font-type);
+    font-size: 1.25em;
+    margin-bottom: 1.25em;
 }
 
-.intro-6 {
-    font-size: 1.5em;
-    color: var(--offWhite);
-    display: inline-block;
-    border: 2px solid var(--green);
-    padding: 4px 8px;
-    align-self: flex-start;
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-.intro-6:hover {
-    font-size: 2em;
+.footer-bar {
+    /*background: var(--green);*/
+    height: 0.25em;
+    border: 0.5px solid var(--green);
+    border-radius: 1em;
+    width: 90%;
+    margin: 5em auto;
 }
