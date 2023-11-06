@@ -3,5 +3,5 @@
 ### Exercises from Codeup's Web Development Bootcamp.
 
 #### Stuff: 
-- [Flex Cheat Sheet](https://yoksel.github.io/flex-cheatsheet/)
-- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+<a href="https://yoksel.github.io/flex-cheatsheet/" target="_blank">Flex Cheatsheet</a> <br>
+<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a>
