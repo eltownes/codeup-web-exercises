@@ -1,0 +1,25 @@
+.navbar-color {
+    background-color: transparent;
+}
+
+.custom-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+.hero-section {
+    margin-bottom: 1em;
+}
+
+img {
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+}
+
+.select-margin {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
