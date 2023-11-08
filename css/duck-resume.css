@@ -1,0 +1,14 @@
+hr {
+    border: none;
+    height: .25em;
+    background-color: darkgreen;
+}
+
+.contact-list li {
+    margin-right: 1.1em;
+}
+
+h5 {
+    color: dodgerblue;
+    margin-top: 2em;
+}
