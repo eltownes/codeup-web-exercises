@@ -27,20 +27,37 @@
 <script>
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // const mainHeader = ;
+        const mainHeader = document.getElementById('main-header');
+        console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = 'JavaScript is Cool';
+        console.log(mainHeader);
 
         // TODO: Uncomment the next line and get the sub header element by id
-        // const subHeader = ;
+        const subHeader = document.getElementById('sub-header');
+        console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
+        subHeader.style.color = 'blue';
+        console.log(subHeader);
 
         // TODO: Uncomment the next line and get all list items
-        // const listItems = ;
+        const listItems = document.getElementsByTagName('li');
+        console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
+        [...listItems].forEach( function(listItem,index) {
+            if (index % 2 === 0) {
+                listItem.style.color = 'grey';
+                console.log(listItem);
+            }
+        });
+        // data-dbid="1"
+        [...document.getElementsByTagName('li')].forEach( listItem => {
+           console.log(listItem);
+        });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         // const subParagraphs = ;
