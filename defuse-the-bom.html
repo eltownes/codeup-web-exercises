@@ -6,14 +6,15 @@
 </head>
 <body>
 
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+<h2 id="message">This BOM will self destruct in <span id="timer">3</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
 
 <script>
     (function () {
         "use strict";
 
-        var detonationTimer = 5;
+        // var detonationTimer = 5;
+        let detonationTimer = parseInt(document.getElementById("timer").innerText);
 
         // TODO: This function needs to be called once every second
         function updateTimer() {
@@ -23,7 +24,6 @@
             } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
-
             detonationTimer--;
         }
 
@@ -39,7 +39,7 @@
         // This causes the defuseTheBOM() function to be called
         // when the "defuser" button is clicked.
         // We will learn about events in the DOM lessons
-        var defuser = document.getElementById('defuser');
+        let defuser = document.getElementById('defuser');
         defuser.addEventListener('click', defuseTheBOM);
     })();
 </script>

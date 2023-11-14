@@ -56,13 +56,18 @@
         });
         // data-dbid="1"
         [...document.getElementsByTagName('li')].forEach( listItem => {
-           console.log(listItem);
+           if (listItem.getAttribute('data-dbid') == 5) {
+               listItem.style.color = "blue";
+               console.log("blue")
+           }
         });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // const subParagraphs = ;
+        const subParagraphs = document.getElementsByClassName("sub-paragraph");
+        console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs.innerText = "hello";
 
 </script>
 </body>
