@@ -14,7 +14,7 @@ function changeName() {
 
 function changeText() {
     const e = document.getElementById("profile-desc")
-    e.style.color = "magenta";
+    // e.style.color = "magenta"; // changing it with the bg-color instead
     e.style.fontFamily = "Tahoma";
 }
 
@@ -31,10 +31,15 @@ function changeBgColor() {
         clearInterval(interval);
         promptChange();
     }
+    let rndColorNum = 0;
+    let oppositeColor = 0;
     const e = document.querySelector("div");
+    const e2 = document.getElementById("profile-desc")
     if (e.className === "bg-color"){
-        rndColor = "#" + Math.floor(Math.random() * maxColor).toString(16);
-        e.style.backgroundColor = rndColor;
+        rndColorNum  = Math.floor(Math.random() * maxColor); //.toString(16);
+        oppositeColor = rndColorNum < (maxColor*.5) ? rndColorNum+(maxColor*.5) : rndColorNum-(maxColor*.5);
+        e.style.backgroundColor  = "#" + rndColorNum.toString(16);
+        e2.style.color = "#" + oppositeColor.toString(16);
     }
 }
 
