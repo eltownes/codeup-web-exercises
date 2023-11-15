@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>DOM: Query and Modify</title>
+
+	<style>
+        .font-size-18px {
+            font-size: 18px;
+        }
+        .magenta {
+	        background-color: magenta;
+        }
+	</style>
 
 </head>
 
@@ -49,7 +58,7 @@
     }
 
     const button1 = document.getElementById("btn1");
-    button1.addEventListener('click', step1);
+    // button1.addEventListener('click', step1);
 
     // step 2
     function step2() {
@@ -63,7 +72,7 @@
     }
 
     const button2 = document.getElementById("btn2");
-    button2.addEventListener('click', step2);
+    // button2.addEventListener('click', step2);
 
     // step 3
     function step3() {
@@ -89,7 +98,7 @@
     }
 
     const button3 = document.getElementById("btn3");
-    button3.addEventListener('click', step3);
+    // button3.addEventListener('click', step3);
 
     // step 4
     function step4() {
@@ -103,7 +112,26 @@
     }
 
     const button4 = document.getElementById("btn4");
-    button4.addEventListener('click', step4);
+    // button4.addEventListener('click', step4);
+
+    document.querySelector("h1").addEventListener("click", (event) => {
+        // event.target.style.backgroundColor = "magenta";
+        event.target.classList.toggle("magenta");
+    });
+
+    document.querySelector("p").addEventListener("dblclick", (event) => {
+        // event.target.style.fontsize = "18px";
+        event.target.classList.toggle('font-size-18px');
+    });
+
+    document.querySelector("ul").addEventListener("mouseenter", (event) => {
+        event.target.style.color = "red";
+    });
+
+    document.querySelector("ul").addEventListener("mouseleave", (event) => {
+        event.target.style.color = "black";
+    });
+
 
 </script>
 
