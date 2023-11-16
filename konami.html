@@ -16,6 +16,10 @@
             height: 25px;
             background-color: white;
         }
+
+        p {
+	        text-align: center;
+        }
 	</style>
 
 </head>
@@ -105,6 +109,11 @@
                 textElement.innerHTML = "";
             }
         }
+
+        textElement.innerHTML += "" +
+	        "<p>" +
+            "<img src=\"images/konami.png\" height=\"256\" width=\"256\"/>" +
+	        "</p>"
     }
 
     document.addEventListener("keyup", codeCheck);
