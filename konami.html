@@ -1,15 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Konami Code</title>
+	<title>Konami Code</title>
+
+	<style>
+        .main {
+            display: grid;
+            /*grid-template-columns: repeat(7, 30px);*/
+            grid-template-columns: repeat(28, 25px);
+            gap: 1px;
+        }
+
+        .pixel {
+            width: 25px;
+            height: 25px;
+            background-color: white;
+        }
+	</style>
+
 </head>
 <body>
 <h1>Konami Code</h1>
 
-<script>
-  "use strict";
+<hr>
+<br>
 
-  document.addEventListener("keyup", event => console.log(event.key) );
+<div class="main">
+
+</div>
+
+<script>
+    "use strict";
+    const t1 = [
+        [1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0, 1],
+        [1, 1, 1, 0, 1, 0, 1],
+        [0, 0, 1, 0, 1, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1]
+    ];
+    const t2 = [
+        [1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0],
+        [1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1]
+    ];
+
+    const pixelText = t2;
+
+    const debug = 1;
+
+    function print(stuff) {
+        const defaultStyle = 'color: red;';
+        console.log('%c' + "   " + stuff, defaultStyle);
+    }
+
+    // "↑ ↑ ↓ ↓ ← → ← → b a enter"
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    // const konamiCode = ["q"];
+    let codeSeqCount = 0;
+
+    function codeCheck(ev) {
+        if (codeSeqCount >= 0) { // init or subsequent run
+            debug ? print(`before - user: ${ev.key} | cnt: ${codeSeqCount}`) : null;
+            ev.key === konamiCode[codeSeqCount] ? codeSeqCount++ : codeSeqCount = -1;
+            if (codeSeqCount === konamiCode.length) {
+                codeCheckSuccess()
+            }
+            debug ? print(`after - user: ${ev.key} | cnt: ${codeSeqCount}`) : null;
+        } else {
+            debug ? print("no longer care") : null;
+        }
+    }
+
+    function pause(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function codeCheckSuccess() {
+        // document.querySelector(".main").innerText = "Success";
+        const textElement = document.querySelector(".main");
+
+        const iter = 8;
+        let rndColorNum = 0;
+        for (let i = 1; i <= iter; i++) {
+
+            for (const row of pixelText) {
+                for (const col of row) {
+                    const pixel = document.createElement("div");
+                    pixel.classList.add("pixel");
+
+                    rndColorNum = "#" +
+                        Math.floor(Math.random() * 224).toString(16).padStart(2, '0') +
+                        Math.floor(Math.random() * 224).toString(16).padStart(2, '0') +
+                        Math.floor(Math.random() * 224).toString(16).padStart(2, '0');
+                    pixel.style.backgroundColor = col === 1 ? rndColorNum : "white";
+
+                    textElement.appendChild(pixel);
+                    await pause(1);
+                }
+            }
+            if (i < iter) {
+                await pause(250);
+                textElement.innerHTML = "";
+            }
+        }
+    }
+
+    document.addEventListener("keyup", codeCheck);
+    document.addEventListener("keyup", event => console.log(event.key));
+
 </script>
 </body>
 </html>
