@@ -45,7 +45,7 @@
 
     function addItem(item) {
 
-        const newItemId = "#id"+new Date().getTime();
+        const newItemId = "id" + new Date().getTime();
         console.log(newItemId);
 
         const newItem = `
@@ -58,20 +58,11 @@
         document.querySelector("#to-do-list").innerHTML = newItem + existingList;
 
         document.querySelector("#to-do-list").addEventListener("click", function (ev) {
-	        if (ev.target && ev.target.matches(".btn") && ev.target.id === newItemId) {
-	        // if (ev.target && ev.target.matches(".btn")) {
-
-		        console.log("---")
-                const itemId = ev.target.id;
-                console.log("Button clicked:", itemId);
-
-                const id = document.querySelector(itemId);
-                console.log(id);
-
-	        }
-            });
+            if (ev.target && ev.target.matches(".btn") && ev.target.id === newItemId) {
+                document.querySelector("#" + ev.target.id).parentElement.remove();
+            }
+        });
     }
-
 
 </script>
 
