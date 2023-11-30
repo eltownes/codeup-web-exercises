@@ -1,34 +1,157 @@
 [
-    {
-        "title": "Hammer",
-        "quantity": 25,
-        "categories": [
-            "tool"
-        ],
-        "price": 20
-    }, {
-        "title": "Drill",
-        "quantity": 5,
-        "categories": [
-            "tool",
-            "powered"
-        ],
-        "price": 100
-    }, {
-        "title": "Mower",
-        "quantity": 5,
-        "categories": [
-            "tool",
-            "gas",
-            "outdoor"
-        ],
-        "price": 200
-    }, {
-        "title": "Screwdrivers",
-        "quantity": 25,
-        "categories": [
-            "tool"
-        ],
-        "price": 10
-    }
+  {
+    "title": "Hammer",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 20
+  },
+  {
+    "title": "Drill",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 100
+  },
+  {
+    "title": "Mower",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "gas",
+      "outdoor"
+    ],
+    "price": 200
+  },
+  {
+    "title": "Screwdrivers",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 10
+  },
+  {
+    "title": "Hammer",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 20
+  },
+  {
+    "title": "Jigsaw",
+    "quantity": 10,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 50
+  },
+  {
+    "title": "Impact Driver",
+    "quantity": 15,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 75
+  },
+  {
+    "title": "Router",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 120
+  },
+  {
+    "title": "Staple Gun",
+    "quantity": 20,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 10
+  },
+  {
+    "title": "Sanding Block",
+    "quantity": 30,
+    "categories": [
+      "tool"
+    ],
+    "price": 5
+  },
+  {
+    "title": "Chisel Set",
+    "quantity": 15,
+    "categories": [
+      "tool"
+    ],
+    "price": 10
+  },
+  {
+    "title": "File Set",
+    "quantity": 20,
+    "categories": [
+      "tool"
+    ],
+    "price": 15
+  },
+  {
+    "title": "Hacksaw",
+    "quantity": 10,
+    "categories": [
+      "tool"
+    ],
+    "price": 10
+  },
+  {
+    "title": "Bench Vise",
+    "quantity": 15,
+    "categories": [
+      "tool"
+    ],
+    "price": 75
+  },
+  {
+    "title": "Miter Saw",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 200
+  },
+  {
+    "title": "Drill",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 100
+  },
+  {
+    "title": "Mower",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "gas",
+      "outdoor"
+    ],
+    "price": 200
+  },
+  {
+    "title": "Screwdrivers",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 10
+  }
 ]

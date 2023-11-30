@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Blog</title>
 </head>
 <body>
+
+<h1>My Blog</h1>
+
+<section id="posts">
+
+</section>
+
+
+<script>
+    "use strict";
+
+    async function getData(url) {
+        try {
+            // const resp = await fetch(url);
+            const resp = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+            if ( !resp.ok ) {
+                throw new Error(`*-*-* try: ${resp.statusText}`);
+            }
+            return await resp.json();
+        } catch (error) {
+            console.error(`*-*-* catch: ${error}`);
+            throw error; //re-throw for the caller
+        } finally {
+            console.info(`*-*-* finally: done`);
+        }
+    }
+
+    function buildPosts (posts) {
+        let postSection = document.querySelector("#posts");
+        for (let post of posts) {
+            // div
+            let d = document.createElement("div");
+            // title
+            let h = document.createElement("h4");
+            h.innerText = post.title;
+            // para
+            let p = document.createElement("p");
+            p.innerText = post.content;
+            // assemble
+            d.appendChild(h);
+            d.appendChild(p);
+            // position
+            postSection.after(d);
+        }
+    }
+
+    const url = "data/blog.json";
+
+    getData(url) // AJAX GET request for the file
+        .then( data => buildPosts(data) )
+    ;
+
+</script>
 
 </body>
 </html>
