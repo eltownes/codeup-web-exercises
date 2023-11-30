@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapbox</title>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet'/>
+	<script src="secrets/mapbox.js"></script>
+	<script src="js/mapbox_geocoder_util.js"></script>
+
+
+</head>
+<body>
+
+<div id='map' style='width: 80vw; height: 80vh; margin: auto'>
+
+</div>
+
+<script>
+    const places = [
+        {
+            "name": "John's Pass Village & Boardwalk",
+            "address": "12945 Village Blvd, Madeira Beach, FL 33708",
+	        "website": "https://johnspass.com/"
+        },
+        {
+            "name": "Sea Dog Brewing Co.",
+            "address": "9610 Gulf Blvd, Treasure Island, FL 33706",
+            "website": "http://www.seadogtreasureisland.com/"
+        },
+        {
+            "name": "Sloppy Joe's on the Beach",
+            "address": "10650 Gulf Blvd, Treasure Island, FL 33706",
+	        "website": "http://www.sloppyjoesonthebeach.com/"
+        }
+    ];
+
+    // clear error
+    const mapContainer = document.querySelector("#map");
+    while (mapContainer.firstChild) {
+        mapContainer.removeChild(mapContainer.firstChild);
+    }
+
+    // init
+    mapboxgl.accessToken = apiKey;
+    let map;
+    let initPlace;
+
+    async function initMap(place, zoom) {
+        initPlace = await geocode(place, apiKey);
+
+        map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            center: initPlace, // starting position [lng, lat]
+            zoom: zoom, // starting zoom
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+    }
+
+    initMap("St. Petersburg, FL", 10);
+
+    // plot places
+    places.forEach(place => displayPlace(place));
+
+    async function displayPlace(place) {
+        let geoAddress = await geocode(place.address, apiKey);
+
+        let popup = new mapboxgl.Popup()
+            .setHTML(`
+				<h3>${place.name}</h3>
+				<a href="${place.website}" target="_blank">Site</a>
+			`)
+
+        let marker = new mapboxgl.Marker()
+            .setLngLat(geoAddress)
+            .addTo(map)
+	        .setPopup(popup);
+    }
+
+</script>
+
+</body>
+</html>
