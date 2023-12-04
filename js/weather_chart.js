@@ -32,6 +32,7 @@ async function createChart(forecastObj) {
 // abstraction may not be necessary
 const metricPath = {
     "temp": "['main']['temp']",
+    "feels like": "['main']['feels_like']",
     "pressure": "['main']['pressure']",
     "humidity": "['main']['humidity']",
     "wind speed": "['wind']['speed']"
@@ -49,7 +50,7 @@ async function parseData(forecastObj) {
     forecastObj.list.forEach(el => {
         let label= el["dt_txt"].substring(11, el["dt_txt"].length - 6);
         if (parseInt(label) === 0) {
-            labels.push(el["dt_txt"].substring(5,  el["dt_txt"].length - 9) + "  - -");
+            labels.push(el["dt_txt"].substring(5,  el["dt_txt"].length - 9) + " - -");
         } else {
             labels.push(label);
         }
@@ -172,7 +173,7 @@ function range(rangeValue) {
     // pic
     let iconName = forecastObj.list[rangeValue]["weather"][0].icon;
     document.querySelector("#modal-pic").innerHTML =
-        `<img src="./images/ow${iconName}.png">`;
+        `<img alt="weather image" src="./images/ow${iconName}.png">`;
     document.querySelector("#table-temp").innerText =
         Math.round(parseFloat(forecastObj.list[rangeValue]["main"]["temp"]));
     document.querySelector("#table-wind-speed").innerText =

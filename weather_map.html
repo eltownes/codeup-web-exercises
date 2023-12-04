@@ -46,15 +46,16 @@
 	</div>
 
 	<div class="row">
-		<form>
-			<div>
+		<form class="d-flex justify-content-center my-2">
+			<div class="me-5">
 				<label for="place">Place: </label>
 				<input name="place" id="place" value="St. Petersburg, FL">
 				<button type="submit" id="find">Find</button>
 			</div>
-			<div>
+			<div class="ms-5">
 				<select name="metric" id="metric">
 					<option value="temp" selected>Temperature</option>
+					<option value="feels like">Feels Like</option>
 					<option value="pressure">Pressure</option>
 					<option value="humidity">Humidity</option>
 					<option value="wind speed">Wind Speed</option>
