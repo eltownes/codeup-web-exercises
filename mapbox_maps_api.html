@@ -6,13 +6,13 @@
 	<script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet'/>
 	<script src="secrets/mapbox.js"></script>
-	<script src="js/mapbox_geocoder_util.js"></script>
+	<script src="js/weather_mapbox.js"></script>
 
 
 </head>
 <body>
 
-<div id='map' style='width: 80vw; height: 80vh; margin: auto'>
+<div id='map-div' style='width: 80vw; height: 80vh; margin: auto'>
 
 </div>
 
@@ -36,7 +36,7 @@
     ];
 
     // clear error
-    const mapContainer = document.querySelector("#map");
+    const mapContainer = document.querySelector("#map-div");
     while (mapContainer.firstChild) {
         mapContainer.removeChild(mapContainer.firstChild);
     }
