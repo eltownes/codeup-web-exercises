@@ -32,6 +32,6 @@ async function getData(url) {
         console.error(`*-*-* catch: ${error}`);
         throw error; //re-throw for the caller
     } finally {
-        console.info(`*-*-* finally: done`);
+        // console.info(`*-*-* finally: done`);
     }
 }
